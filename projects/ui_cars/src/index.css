@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+:root
+{
+  --primary-color:#212124;
+  --secondary-color:#EE4045;
+  --third-color:#FFFFFF;
+
+  --not-activated: rgba(15,14,14,.32);
+  --activated: #EE4045;
+
+  --half-opacity-text: rgba(255,255,255,.5);
+  --opacity-color: rgba(119, 119, 119, 0.1);
+}
+
+@font-face
+{
+  font-family: Myriad;
+  src: url(../src/fonts/MyriadPro-Bold.otf);
+}
+
+*
+{
+  margin: 0;
+  padding: 0;  
+  font-family: 'Nunito', sans-serif, Myriad; 
+  font-size: 1rem;
+  color: var(--primary-color);
+  outline: none;
+}
+
+p
+{
+  font-size: 1rem;  
+}
+
+body {  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+section .container
+{
+  padding: 1em 0;
+}
+
+.nav-item
+{
+  font-family: 'Nunito', sans-serif;
+}
+
+.navbar
+{
+  /* background-color: var(--primary-color);     */
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;  
+  top: 0;
+  left: 0;
+
+  max-width: 100%;
+  width: 100%;  
+
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  z-index: 99;
+  /* opacity: .5; */
+  
+}
+
+.navbar .nav-link
+{
+  color: var(--third-color) !important;
+  margin-left: 20px;
+}
+
+.navbar-brand
+{
+  font-family: Myriad;
+  color: var(--third-color) !important;
+}
+
+.navbar-toggler
+{
+  border-color: var(--third-color) !important;
+}
+
+.navbar-toggler-icon
+{
+  color: var(--third-color) !important;
+}
+
+section
+{
+  min-height: 50vh;
+  background: #313131;
+  /* background: red; */
+}
+
+section .container
+{
+  min-height: inherit;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.bigHero
+{
+  margin-top: 60px;
+  width:100%;  
+
+  background-image: url(./images/bigHero.jpg);
+  background-position: center;
+  background-size: cover;
+  background-color:rgba(0,0,0,0.7);
+  background-blend-mode: overlay;
+
+  min-height: 60vh;  
+}
+
+.smallHero
+{
+  /* margin-top: 60px; */
+  width:100%;  
+
+  background-image: url(./images/bigHero.jpg);
+  background-position: center;
+  background-size: cover;
+  background-color:rgba(0,0,0,0.7);
+  background-blend-mode: overlay;
+
+  min-height: 30vh;  
+}
+
+.smallHero .container
+{
+  display: flex;
+  flex-flow: column;
+}
+
+.search-bar
+{  
+  margin-top: 50px;
+  padding: 1em .7em;
+
+  border-radius: 10px;
+  border: .5px solid var(--third-color);
+
+  background-color: var(--not-activated);
+  color: var(--half-opacity-text);
+  /* border-color: var(--secondary-color); */
+}
+
+.search-bar:focus
+{
+    background: transparent;
+    color: var(--third-color);
+        
+    border-color: var(--secondary-color);    
+
+    box-shadow: none;
+
+    transition: all 300ms linear;
+}
+
+/* tabs container */
+.tabs-container
+{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.tabs-container .list-group-item
+{
+    height: 50px;
+    margin-right: 5px;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.selectedTab
+{
+    background: var(--secondary-color);
+    color: var(--third-color) !important;
+}
+
+/* photo grid */
+.photo-grid
+{
+    display: grid;
+    grid-gap: 10px;    
+    grid-auto-columns: 1fr;
+    /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
+    /* grid-auto-rows: minmax(50px, auto); */
+    /* grid-auto-rows: 1fr; */
+    grid-auto-rows: minmax(auto,500px);
+    width:100%;
+    /* height: 500px; */
+    /* background: var(--opacity-color);     */
+}
+
+.photo-grid .image-item:nth-child(5)
+{
+    grid-column-end: span 2;
+}
+
+.image-item 
+{
+  display: flex;
+  flex-flow: column;
+  margin: 20px 0;
+}
+
+
+.photo-grid img
+{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.image-item img
+{
+  flex: 2;  
+}
+
+.image-item small
+{
+  flex: 1;
+}
+
+.video-grid
+{
+    display: grid;
+  
+    width:100%;
+    height: 500px;
+    background: #EE4045;   
+}
+
+
+
+@media screen and (max-width: 770px)
+{
+  section .container
+  {
+    padding: 1em 1em !important;
+  }
+}
